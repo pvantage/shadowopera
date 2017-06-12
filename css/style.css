@@ -1,0 +1,538 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+@font-face {
+	font-family: 'Conv_nyala_0';
+	src: url('../fonts/nyala_0.eot');
+	src: local('☺'), url('../fonts/nyala_0.woff') format('woff'), url('../fonts/nyala_0.ttf') format('truetype'), url('../fonts/nyala_0.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+*{ margin:0px; padding:0px;}
+a{ text-decoration:none;}
+img{border:none;}
+.clr{ clear:both; margin:0px; padding:0px;}
+h1,h2,h3,h4,h5,h6,h7,p,span{ margin:0px; padding:0px;}
+body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
+.wrapper {
+    max-width: 767px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    width: 100%;
+}
+header {
+    background: #222222;
+    padding: 5px 25px;
+	position:relative;
+}
+.header-top {
+	font-family: 'Conv_nyala_0';
+    text-align: center;
+    color: #8ee1ff;
+    font-size: 31px;
+    text-transform: uppercase;
+	
+}
+.menubutton {
+    float: left;
+    background: none;
+    border: none;
+}
+.wrapper .container {
+    width: 100%;
+}
+.page-title {
+    background: #343333;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.afterclieckshow li a:hover {
+    background: #343333;
+	text-decoration:none;
+}
+.header-top ul.dropdown-menu {
+    top: 34px;
+}
+.fp-block img {
+    width: 100%;
+}
+.first-phase {
+    padding: 15px;
+}
+.fp-block {
+    margin-bottom: 15px;
+    width: 100%;
+    float: left;
+	 position: relative;
+}
+.fpblock-img {
+    position: relative;
+}
+.fpblock-btn {
+    position: absolute;
+   left:50%;
+   top:50%;
+   width: 100%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+  
+}
+a.fp-button {
+      background: #fff;
+    font-size: 28px;
+    color: #000;
+    text-transform: uppercase;
+    padding: 9px 36px;
+    border-radius: 5px;
+    font-family: 'Conv_nyala_0';
+	    letter-spacing: 1px;
+}
+.programbtn a.fp-button {
+    background: #ff673a;
+    color: #fff;
+}
+a.fp-button.flm {
+    background: #02a7e3;
+    color: #fff;
+    border: 2px solid #fff;
+}
+a.fp-button:hover {
+    text-decoration: none;
+    background: #e1f7ff;
+    color: #000;
+}
+.live-lyrics {
+    background: #222222;
+    padding: 35px 20px;
+    float: left;
+    width: 100%;
+}
+.lyrics-left {
+    float: left;
+    width: 70%;
+}	
+.lyrics-right {
+    width: 30%;
+    float: right;
+}
+.live-lyricscontainer {
+    padding: 15px;
+}
+.live-lyrics h1 {
+    margin: 0px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: normal;
+	font-family: 'Conv_nyala_0';
+}
+.live-lyrics h2 {
+    margin: 0px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+	text-transform:uppercase;
+	    margin-top: 6px;
+		    font-family: 'Open Sans', sans-serif;
+}
+.lyrics-right span {
+    font-size: 14px;
+    font-weight: normal;
+    float: right;
+    color: #8ee1ff;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+}
+.lyrics-right label {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 6px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    float: right;
+    width: 100%;
+}
+.filmaudio {
+    background: #3c3c3c;
+}
+.film-main {
+    padding: 20px 0px;
+    border-bottom: 1px solid #515151;
+	width:100%;
+	float:left;
+}
+.active-play {
+    background: #e1f7ff;
+}
+body .active-play h1, body .active-play span, body .active-play p, body .active-play label{ color:#000;}
+.film-main .film-content {
+    color: #fff;
+    line-height: 31px;
+}
+.menubox img {
+    float: left;
+	
+}
+.paragraph{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+}
+.paragraph {
+    margin-top: 27px;
+    float: left;
+    width: 100%;
+}
+.film-img img {
+    width: 100%;
+}	
+.lyrics-right{ text-align:right; margin-top:10px; padding:0px;}
+.film-content h1 {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.film-content p {
+    font-size: 14px;
+    color: #cbcbcb;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+}
+.film-content span {
+    font-size: 15px;
+    color: #fff;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+}
+.film-content label {
+    float: left;
+    width: 100%;
+    color: #8ee1ff;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+}
+.film-action {
+	padding:23px 0px 0px 0px;
+	text-align:center;
+}
+.film-content {
+    padding: 0px;
+}
+.header-menu {
+    float: left;
+}
+.header-menu.toggled ul.afterclieckshow {
+    display: block;
+}
+.menubox {
+    position: relative;
+    margin-top: 12px;
+}
+ul.afterclieckshow {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #626262;
+    padding: 0px ;
+    margin-top: 37px;
+	z-index: 999;
+}
+.afterclieckshow a {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    float: left;
+    width: 100%;
+    padding: 11px 26px;
+    font-weight: 400;
+    border-bottom: 1px solid #868686;
+}
+.afterclieckshow li {
+    list-style: none;
+    text-align: left;
+}	
+.afterclieckshow{ display:none;}
+.events-blocks {
+    background: #3c3c3c;
+    padding: 0px;
+    float: left;
+    width: 100%;
+    background: #fff;
+}
+.event-img {
+    padding: 0px;
+}
+.event-img img {
+    width: 100%;
+}
+.event-cnt {
+    padding: 10px;
+}	
+.events-main .container {
+    padding: 10px;
+    background: #3c3c3c;
+}
+.event-cnt h1 {
+    font-size: 25px;
+}
+.event-cnt h2 {
+    font-size: 16px;
+    color: #a5a5a5;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.events-section {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.entblck label {
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+}
+.events-rightbll {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+body .playing .button{
+    background: #03a3dd;
+    color: #fff;
+}
+body .play .button{
+    background: #5d5e5f;
+    color: #fff;
+}
+
+.entblck .button {
+    float: right;
+    background: #d4d4d4;
+    padding: 3px 0px;
+    border-radius: 4px;
+    font-size: 13px;
+    width: 68px;
+    text-align: center;
+    margin-right: 24px;
+}
+.entblck {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 9px;
+}
+.playing label {
+    color: #03a3dd;
+}
+.evt-ftr {
+    margin-top: 36px;
+    float: left;
+    width: 100%;
+}
+.current-play {
+    padding-right: 0px;
+}
+.evt-ftr .author {
+    padding-left: 0px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+}
+.author p {
+    float: left;
+    margin-right: 5px;
+    color: #03a3dd;
+    font-weight: 500;
+}
+.author span {
+    font-size: 12px;
+    font-style: normal;
+    width: 100%;
+    float: left;
+}
+.stop label {
+    color: #9b9b9b;
+}
+
+.events-blocks {
+    margin-bottom: 20px;
+}
+.entertainment-block {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.entertainment-img {
+    position: relative;
+}
+.entertainment-cnt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.entertainment-img img {
+    width: 100%;
+   
+}
+.entertainment-cnt h1 {
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+	color:#fff;
+	font-size: 30px;
+}
+
+
+a.backbtn {
+    margin-right: 10px;
+}
+.film-action a {
+    width: 50%;
+    float: left;
+}
+.events-section {
+
+    margin-top: 38px;
+}
+/**Responsive css start here**/
+
+
+@media (min-width: 700px) and (max-width: 767px) {
+body .events-section {
+    margin-top: 22px;
+}
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+.entblck .button {
+    margin-right: 2px;
+}	
+.events-section {
+
+    margin-top: 8px;
+}
+.evt-ftr {
+    margin-top: 10px;
+
+}
+}
+@media (min-width: 430px) and (max-width: 600px) {
+.entblck .button {
+    margin-right: 2px;
+}		
+.event-cnt {    width: 70%;}
+.event-img {   width: 30%;}
+.evt-ftr {    margin-top: 0px;}
+.event-cnt h1 {
+    font-size: 19px;
+}
+.event-cnt h2 {
+    font-size: 14px;
+    margin-top: 1px;
+}
+.entblck {
+    margin-bottom: 0px;
+}
+.current-play a img {
+    width: 18%;
+}
+.evt-ftr .author {
+    font-size: 12px;
+}
+.event-cnt {
+    padding-top: 5px;
+}
+.entblck .button{ padding:1px 0px;}
+}
+@media (min-width: 320px) and (max-width: 480px) {
+.evt-ftr {
+    margin-top: 2px;
+}	
+.afterclieckshow a{    font-size: 13px; }	
+.live-lyrics h1{ font-size:20px;}	
+.live-lyrics h2{ font-size:12px;}	
+.lyrics-right label {
+    font-size: 11px;
+}	
+.header-top {    font-size: 19px;}
+.page-title{ font-size:14px;}
+a.fp-button {font-size: 16px; padding: 4px 13px;border-radius: 3px;}
+.paragraph p {    font-size: 15px;}
+.live-lyrics {   padding: 16px 10px;}
+.film-content span {    font-size: 12px;}
+.film-content p {   font-size: 11px;}
+.film-main {    padding: 10px 0px;}
+.first-phase {    padding: 10px;}
+.fp-block {   margin-bottom: 10px;}
+.live-lyricscontainer {   padding: 10px;}
+.paragraph {   margin-top: 0px;}
+.film-content label{    font-size: 11px;}
+.film-action{    padding-top: 23px;}
+.film-content h1{font-size: 16px;}
+.film-main .film-content {
+    line-height: 18px;
+}
+.menubox img {
+    width: 63%;
+}
+.menubox {
+    margin-top: 8px;
+}
+
+ul.afterclieckshow{ margin-top:23px;}
+
+}
+@media screen and (max-width: 600px) {
+	.film-main .film-content {
+
+    line-height: normal;
+}
+.events-section {
+    margin-top: 7px;
+}
+}
+@media screen and (max-width: 429px) {
+.event-cnt {
+    width: 100%;
+}
+.event-img {
+    width: 100%;
+}
+
+}
+@media screen and (max-width: 400px) {
+.entertainment-cnt h1 {
+    font-size: 21px;
+}
+.lyrics-left, .lyrics-right {
+    float: left;
+    width: 100%;
+	text-align:left	;
+}
+.lyrics-right span {
+    text-align: right;
+    float: left;
+    margin-top: 10px;
+}
+.entblck .button {
+    margin-right: 5px;
+}
+
+}

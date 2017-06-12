@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow Opera Group</title>
+
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+jQuery(document).ready(function(){
+    jQuery(".header-menu").click(function(){
+        jQuery(this).toggleClass("toggled");
+    });
+});
+</script>
+<script type="text/javascript">
+function getEvent(){
+	
+	var url = siteurl + '?route=common/home/getevent';	
+		
+	jQuery.ajax({ 
+			 type: 'POST',  
+			 url: url,  
+			 dataType: 'json',  			
+			 crossDomain: true, 
+			 success: function(data){ 		
+			 		if(data['play'])
+					{						
+						if($("#lyrics_id").val() > 0)
+						{
+							if($("#lyrics_id").val() != data['lyric_id'])
+							{
+								$("#event_title").html(data['name']);
+								$("#director").html(data['director']);
+								$("#composer").html(data['composer']);
+								$("#date").html(data['event_date']);						
+								$("#lyrics").html(data['lyrics']);
+								$("#lyrics_id").val(data['lyric_id']);
+							}
+						}else if($("#lyrics_id").val() == 0){
+							$("#event_title").html(data['name']);
+							$("#director").html(data['director']);
+							$("#composer").html(data['composer']);
+							$("#date").html(data['event_date']);						
+							$("#lyrics").html(data['lyrics']);
+							$("#lyrics_id").val(data['lyric_id']);
+						}
+					}else{
+						$("#lyrics").html('Sorry, no lyrics playing. Please try back later.');
+					}		
+			   }
+		   });	
+	}
+
+$(document).ready(function(e) {
+    setTimeout(function(){
+			getEvent();
+		 },180 * 1000);
+});
+</script>
+  </head>
+<body onLoad="getEvent();">
+<div class="wrapper">
+<header>
+
+<div class="header-top">
+<div class="header-menu">
+<div class="menubox"><img src="images/menu-icon.png"></div>
+
+  <ul class="afterclieckshow">
+    <li><a href="./">Home</a></li>
+    <li><a href="./live.html">Live LYRICS</a></li>
+    <li><a href="./film_audio.html">Film Audio</a></li>
+    <li><a href="./programme.html">Programme</a></li>	
+  </ul>
+</div>
+Shadow Opera Group</div>
+
+</header>
+
+  <div class="container">
+      <div class="row">
+	  <div class="page-title">Live LYRICS</div>
+	  <div class="live-lyricscontainer">
+	  <div class="live-lyrics">
+            <div class="lyrics-main">  
+                     <div class="lyrics-left">
+                      <h1 id="event_title"></h1>
+                      <h2 id="director"></h2>
+                     </div>
+                  <div class="lyrics-right">
+                  <span id="date"></span>
+                  <label id="composer"></label>
+                  <input type="hidden" id="lyrics_id" name="lyrics_id" value="0">
+                  </div>
+          </div>
+	  	  <div class="paragraph" id="lyrics"></div>	 
+	</div>
+	  </div>
+	  </div>
+  </div>
+
+</div>
+  </body>
+</html>
