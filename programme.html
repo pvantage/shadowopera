@@ -10,6 +10,8 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/config.js"></script>
 <script>
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
@@ -17,8 +19,64 @@ jQuery(document).ready(function(){
     });
 });
 </script>
+<script type="text/javascript">
+function getProgramme(){
+	
+	var url = siteurl + '?route=common/home/getprogramms';	
+		
+	jQuery.ajax({ 
+			 type: 'POST',  
+			 url: url,  
+			 dataType: 'json',  			
+			 crossDomain: true, 
+			 success: function(data){ 
+			 	 var prog_html = '';
+				 if(data['events']){				
+						 			
+					for (i = 0; i < data['events'].length; i++) {
+						
+						if(data['events'][i]['currently_ply'])
+						{
+							prog_html += '<div class="col-md-12 film-main active-play">';
+						}else{
+						
+							prog_html += '<div class="col-md-12 film-main">';
+						}
+						
+						prog_html += '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">';
+						
+                       if(data['events'][i]['image']){
+						    prog_html += '<img src="' + data['events'][i]['image']+ '">';
+					   }
+                        prog_html += '</div>';
+						
+                        prog_html += '<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">';
+                        prog_html += '<h1>' + data['events'][i]['name'] + '</h1>';
+                        prog_html += '<p>( Prod By ' +  data['events'][i]['prod_by'] + ' )</p>';
+                        prog_html += '<div>' + data['events'][i]['info']+ '</div>';
+                        prog_html += '<label>' + data['events'][i]['date']+ '</label>';
+                        prog_html += '</div>';
+                        prog_html += '<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">';
+                        prog_html += '<img src="images/dotted.png"/>';
+                        prog_html += '</div>'
+						
+						prog_html += '</div>';					
+					}					
+				 }else{
+					prog_html += '<div class="col-md-12 film-main">';
+					prog_html += '<p>Sorry, there is no events playing.</p>';
+					prog_html += '</div>';				 
+				}
+				
+				$("#wrap_events").html(prog_html);
+					
+							
+			   }
+		   });	
+	}
+</script>
   </head>
-  <body>
+  <body onLoad="getProgramme();">
 <div class="wrapper">
 <header>
 
@@ -43,66 +101,7 @@ Shadow Opera Group</div>
 	  <div class="filmaudio">
 	  <div class="filmaudio-mid">
 	      <div class="container">
-        <div class="row">
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img.png"/>
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<img src="images/dotted.png"/>
-		</div>
-</div>
-		<div class="col-md-12 film-main active-play">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img1.png"/>
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<img src="images/dotted.png"/>
-		</div>
-</div>
-
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img.png"/>
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<img src="images/dotted.png"/>
-		</div>
-</div>
-
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img1.png"/>
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<img src="images/dotted.png"/>
-			</div>
-			</div>
-	 	 </div>
+        <div class="row" id="wrap_events"></div>
 	  </div>
 	</div>
 	 </div>
