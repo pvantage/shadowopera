@@ -80,6 +80,10 @@ header {
    top:50%;
    width: 100%;
     transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
     text-align: center;
   
 }
@@ -123,6 +127,7 @@ a.fp-button:hover {
 }
 .live-lyricscontainer {
     padding: 15px;
+	overflow:hidden;
 }
 .live-lyrics h1 {
     margin: 0px;
@@ -413,7 +418,7 @@ a.backbtn {
 }
 /**Responsive css start here**/
 
-
+.active-play .prog_txt{ color:#000;}
 @media (min-width: 700px) and (max-width: 767px) {
 body .events-section {
     margin-top: 22px;

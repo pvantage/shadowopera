@@ -53,7 +53,7 @@ function getProgramme(){
                         prog_html += '<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">';
                         prog_html += '<h1>' + data['events'][i]['name'] + '</h1>';
                         prog_html += '<p>( Prod By ' +  data['events'][i]['prod_by'] + ' )</p>';
-                        prog_html += '<div>' + data['events'][i]['info']+ '</div>';
+                        prog_html += '<div class="prog_txt">' + data['events'][i]['info']+ '</div>';
                         prog_html += '<label>' + data['events'][i]['date']+ '</label>';
                         prog_html += '</div>';
                         prog_html += '<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">';
@@ -108,7 +108,5 @@ Shadow Opera Group</div>
 	</div>
   </div>
 </div>
-
-
   </body>
 </html>
