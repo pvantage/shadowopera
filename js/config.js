@@ -1,4 +1,4 @@
-var siteurl = "http://localhost/event_pp/index.php";
+var siteurl = "http://shadowopera.vantagewebtech.com/index.php";
 
 function gup(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
