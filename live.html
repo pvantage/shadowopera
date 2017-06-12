@@ -52,27 +52,25 @@ function getEvent(){
 							$("#lyrics_id").val(data['lyric_id']);
 						}
 					}else{
-						$("#lyrics").html('Sorry, no lyrics playing. Please try back later.');
-					}		
-			   }
-		   });	
-	}
+				$("#lyrics").html('Sorry, no lyrics playing. Please try back later.');
+			}		
+	   }
+   });	
+}
 
 $(document).ready(function(e) {
     setTimeout(function(){
 			getEvent();
-		 },180 * 1000);
+		 }, 30000);
 });
 </script>
   </head>
 <body onLoad="getEvent();">
 <div class="wrapper">
 <header>
-
 <div class="header-top">
 <div class="header-menu">
 <div class="menubox"><img src="images/menu-icon.png"></div>
-
   <ul class="afterclieckshow">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./live.html">Live LYRICS</a></li>
@@ -99,10 +97,10 @@ Shadow Opera Group</div>
                   </div>
           </div>
 	  	  <div class="paragraph" id="lyrics"></div>
-	</div>
+	    </div>
 	  </div>
-	  </div>
-  </div>
+   </div>
+ </div>
 </div>
   </body>
 </html>
