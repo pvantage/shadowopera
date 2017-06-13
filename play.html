@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow Opera Group</title>
+
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+jQuery(document).ready(function(){
+    jQuery(".header-menu").click(function(){
+        jQuery(this).toggleClass("toggled");
+    });
+});
+</script>
+<script type="text/javascript">
+function getAudio(){
+	
+	var url = siteurl + '?route=common/home/getaudio';
+	var audio_id = gup('audio_id');			
+	jQuery.ajax({ 
+			 type: 'POST',  
+			 url: url,  
+			 dataType: 'json',
+			 data: {audio_id:audio_id},  			
+			 crossDomain: true, 
+			 success: function(data){
+			 		
+				$("#audio_title").html(data['name']);
+				
+				var html_wrapper = '';
+				
+				if(data['image'])
+				{
+					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><img src="' + data['image'] + '" alt="" /></div>';	
+				}
+				
+				html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">'+ data['info'] + '</div>';
+				
+				if(data['src'])
+				{
+					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><div class="audio_wrapper">';
+					
+					html_wrapper += '<audio controls="controls">';
+					html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';
+					html_wrapper += 'Your browser does not support audio player';
+					html_wrapper += '</audio>';					
+					
+					html_wrapper += '</div></div>';	
+				}
+				
+				$(".player_det").html(html_wrapper);
+									
+			   }
+		   });	
+	}
+</script>
+  </head>
+<body onLoad="getAudio();">
+<div class="wrapper">
+<header>
+<div class="header-top">
+<div class="header-menu">
+<div class="menubox"><img src="images/menu-icon.png"></div>
+
+  <ul class="afterclieckshow">
+    <li><a href="1.html">Home</a></li>
+    <li><a href="2.html">Live LYRICS</a></li>
+    <li><a href="3.html">Film Audio</a></li>
+    <li><a href="4.html">Currently Playing Events</a></li>
+	<li><a href="5.html">Admin</a></li>
+	<li><a href="6.html">Event Detail Page</a></li>
+  </ul>
+</div>
+Shadow Opera Group</div>
+
+</header>
+
+  <div class="container">
+      <div class="row">
+	  <div class="page-title"><a class="backbtn" href="./film_audio.html"><img src="images/back.png"/></a><span id="audio_title"> Art Journal </span><img class="pull-right" src="images/ratio.png"/></div>
+
+	  </div>
+      
+      <div class="row">
+      	<div class="filmaudio">
+        	<div class="col-md-12 player_det"></div>
+            
+           
+        
+        </div>
+      </div>
+      
+  </div>
+
+</div>
+
+
+  </body>
+</html>

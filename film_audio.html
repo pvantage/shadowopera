@@ -10,15 +10,67 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript">
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
     });
 });
 </script>
+<script type="text/javascript">
+function getAudios(){
+	
+	var url = siteurl + '?route=common/home/getaudios';	
+		
+	jQuery.ajax({ 
+			 type: 'POST',  
+			 url: url,  
+			 dataType: 'json',  			
+			 crossDomain: true, 
+			 success: function(data){ 
+			 	 var prog_html = '';
+				 if(data['audios']){				
+						 			
+					for (i = 0; i < data['audios'].length; i++) {					
+						
+						prog_html += '<div class="col-md-12 film-main">';
+												
+						prog_html += '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">';
+						
+                       if(data['audios'][i]['image']){
+						    prog_html += '<a href="./play.html?audio_id='+ data['audios'][i]['audio_id'] + '"><img src="' + data['audios'][i]['image']+ '"></a>';
+					   }
+                        prog_html += '</div>';
+						
+                        prog_html += '<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">';
+                        prog_html += '<h1><a href="./play.html?audio_id='+ data['audios'][i]['audio_id'] + '">' + data['audios'][i]['name'] + '</a></h1>';
+                        prog_html += '<p>( Prod By ' +  data['audios'][i]['prod_by'] + ' )</p>';
+                        prog_html += '<div class="prog_txt">' + data['audios'][i]['info']+ '</div>';
+                        prog_html += '<label>' + data['audios'][i]['date']+ '</label>';
+                        prog_html += '</div>';
+                        prog_html += '<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">';
+                        prog_html += '<a href="./play.html?audio_id='+ data['audios'][i]['audio_id'] + '"><img src="images/dotted.png"/></a>';
+                        prog_html += '</div>'
+						
+						prog_html += '</div>';					
+					}					
+				 }else{
+					prog_html += '<div class="col-md-12 film-main">';
+					prog_html += '<p>Sorry, there is no audio found.</p>';
+					prog_html += '</div>';				 
+				}
+				
+				$("#wrap_audios").html(prog_html);
+					
+							
+			   }
+		   });	
+	}
+</script>
   </head>
-  <body>
+  <body onLoad="getAudios();">
 <div class="wrapper">
 <header>
 
@@ -41,70 +93,11 @@ Shadow Opera Group</div>
       <div class="row">
 	  <div class="page-title">Film Audio <img class="pull-right" src="images/ratio.png"/></div>
 	  <div class="filmaudio">
-<div class="filmaudio-mid">
-	      <div class="container">
-        <div class="row">
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img.png">
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<a href="#"><img src="images/dotted.png"></a>
-		</div>
-</div>
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img1.png">
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<a href="#"><img src="images/dotted.png"></a>
-		</div>
-</div>
-
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img.png">
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<a href="#"><img src="images/dotted.png"></a>
-		</div>
-</div>
-
-		<div class="col-md-12 film-main">
-		<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">
-		<img src="images/audio-img1.png">
-		</div>
-		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">
-		<h1>Art Journal</h1>
-		<p>( Prod By J Gramm )</p>
-		<span>When an unknown printer took a galley of type pecimen	</span>
-		<label>17 May 2017</label>
-		</div>
-		<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">
-		<a href="#"><img src="images/dotted.png"></a>
+				<div class="filmaudio-mid">
+	      			<div class="container">
+        					<div class="row"  id="wrap_audios"></div>
+	 	 			</div>
 				</div>
-			</div>
-	  	   </div>
-	 	 </div>
-		</div>
 		</div>
 	  </div>
 	 </div>
