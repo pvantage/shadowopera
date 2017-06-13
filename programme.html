@@ -50,15 +50,16 @@ function getProgramme(){
 					   }
                         prog_html += '</div>';
 						
-                        prog_html += '<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 film-content">';
+                        prog_html += '<div class="col-md-9 col-lg-9 col-sm-9 col-xs-9 film-content">';
                         prog_html += '<h1>' + data['events'][i]['name'] + '</h1>';
                         prog_html += '<p>( Prod By ' +  data['events'][i]['prod_by'] + ' )</p>';
                         prog_html += '<div class="prog_txt">' + data['events'][i]['info']+ '</div>';
                         prog_html += '<label>' + data['events'][i]['date']+ '</label>';
                         prog_html += '</div>';
-                        prog_html += '<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">';
+						
+                       /* prog_html += '<div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 film-action">';
                         prog_html += '<img src="images/dotted.png"/>';
-                        prog_html += '</div>'
+                        prog_html += '</div>'*/
 						
 						prog_html += '</div>';					
 					}					
