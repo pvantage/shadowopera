@@ -15,7 +15,6 @@ function gup(sParam) {
     }
 }
 
-
 function gotoBack(){
 	history.go(-1);
     navigator.app.backHistory();	
