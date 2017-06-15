@@ -37,7 +37,8 @@ function getEvent(){
 								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
-								$("#date").html(data['event_date']);						
+								$("#date").html(data['event_date']);
+								$("#time").html(data['event_time']);						
 								$("#lyrics").html(data['lyrics']);
 								$("#lyrics_id").val(data['lyric_id']);
 							}
@@ -45,7 +46,8 @@ function getEvent(){
 							$("#event_title").html(data['name']);
 							$("#director").html(data['director']);
 							$("#composer").html(data['composer']);
-							$("#date").html(data['event_date']);						
+							$("#date").html(data['event_date']);
+							$("#time").html(data['event_time']);						
 							$("#lyrics").html(data['lyrics']);
 							$("#lyrics_id").val(data['lyric_id']);
 						}
@@ -91,6 +93,7 @@ Shadow Opera Group</div>
                  	</div>
                   	<div class="lyrics-right">
                   	<span id="date"></span>
+                    <span id="time"></span>
                   		<label id="composer"></label>
                   		<input type="hidden" id="lyrics_id" name="lyrics_id" value="0">
                    </div>
