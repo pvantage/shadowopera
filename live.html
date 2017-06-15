@@ -10,7 +10,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script>
 jQuery(document).ready(function(){
@@ -20,10 +20,8 @@ jQuery(document).ready(function(){
 });
 </script>
 <script type="text/javascript">
-function getEvent(){
-	
-	var url = siteurl + '?route=common/home/getevent';	
-		
+function getEvent(){	
+	var url = siteurl + '?route=common/home/getevent';		
 	jQuery.ajax({ 
 			 type: 'POST',  
 			 url: url,  
@@ -95,8 +93,8 @@ Shadow Opera Group</div>
                   	<span id="date"></span>
                   		<label id="composer"></label>
                   		<input type="hidden" id="lyrics_id" name="lyrics_id" value="0">
-                </div>
-          </div>
+                   </div>
+          	  </div>
 	  	  	<div class="paragraph" id="lyrics"></div>
 	      </div>
 	    </div>
