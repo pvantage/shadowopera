@@ -132,21 +132,21 @@ a.fp-button:hover {
 .live-lyrics h1 {
     margin: 0px;
     color: #fff;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: normal;
 	font-family: 'Conv_nyala_0';
 }
 .live-lyrics h2 {
     margin: 0px;
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: normal;
 	text-transform:uppercase;
 	    margin-top: 6px;
 		    font-family: 'Open Sans', sans-serif;
 }
 .lyrics-right span {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     float: right;
     color: #8ee1ff;
@@ -154,21 +154,21 @@ a.fp-button:hover {
     font-family: 'Open Sans', sans-serif;
 }
 .lyrics-right label {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 300;
-    margin-top: 6px;
+    margin: 0px;
     color: #fff;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
-    float: right;
     width: 100%;
+	text-align:right;
 }
 .filmaudio {
-    background: #3c3c3c;
+    background: #535353;
 }
 .film-main {
     padding: 20px 0px;
-    border-bottom: 1px solid #515151;
+    border-bottom: 1px solid #333;
 	width:100%;
 	float:left;
 }
@@ -192,7 +192,7 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
     font-family: 'Open Sans', sans-serif;
 }
 .paragraph {
-    margin-top: 27px;
+    margin-top: 15px;
     float: left;
     width: 100%;
 }
@@ -204,8 +204,10 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
+.lyrics-right span{ display:block; margin:0px!important; text-align:right; float:none;}
+
 .film-content h1 a{ color:#fff;}
 .film-content p {
     font-size: 14px;
@@ -225,7 +227,7 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
     width: 100%;
     color: #8ee1ff;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
 	padding-top:10px;
 }
@@ -245,6 +247,8 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
 .menubox {
     position: relative;
     margin-top: 12px;
+	    float: left;
+    cursor: pointer;
 }
 ul.afterclieckshow {
     position: absolute;
@@ -526,14 +530,13 @@ ul.afterclieckshow{ margin-top:23px;}
 }
 .lyrics-left, .lyrics-right {
     margin-top:0px;
+	 margin-bottom:0px;
 }
-.lyrics-right span {
-    text-align: right;
-    float: left;
-    margin-top: 10px;
-}
+
 .entblck .button {
     margin-right: 5px;
 }
-
+.lyrics-right{ width:100%; padding:10px 0;}
+.lyrics-right label{ text-align:left;}
+.lyrics-right span{ text-align:left;}
 }
