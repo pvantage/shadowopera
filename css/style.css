@@ -167,6 +167,8 @@ a.fp-button:hover {
 }
 .filmaudio {
     background: #535353;
+	float:left;
+	width:100%;
 }
 .film-main {
     padding: 20px 0px;
@@ -258,7 +260,7 @@ ul.afterclieckshow {
     left: 0;
     background: #626262;
     padding: 0px ;
-    margin-top: 37px;
+    margin-top: 56px;
 	z-index: 999;
 }
 .afterclieckshow a {
