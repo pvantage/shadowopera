@@ -11,30 +11,51 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script>
-jQuery(document).ready(function(){
-    jQuery(".header-menu").click(function(){
-        jQuery(this).toggleClass("toggled");
-    });
-});
-</script>
+
 </head>
 <body>
 <div class="wrapper">
-<header>
+<header class="newmenumain">
 <div class="header-top">
-<div class="header-menu">
+<!--<div class="header-menu">
 <div class="menubox"><img src="images/menu-icon.png"></div>
   <ul class="afterclieckshow">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./live.html">Live LYRICS</a></li>
     <li><a href="./film_audio.html">Film Audio</a></li>
-    <li><a href="./programme.html">Programme</a></li>
-    <li><a href="./index-1.html.html">Index 02</a></li>	
+    <li><a href="./programme.html">Programme</a></li>	
   </ul>
+</div>-->
+
+<div class="header-menu">
+
+<nav class="navbar navbar-inverse ">
+  <div class="navbar-header">
+   
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+	<p>Shadow Opera Group</p>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./live.html">Live LYRICS</a></li>
+    <li><a href="./film_audio.html">Film Audio</a></li>
+    <li><a href="./programme.html">Programme</a></li>	
+    </ul>
+    
+  </div>
+</nav>
+
 </div>
-Shadow Opera Group</div>
+</div>
 </header>
+
+
+
   <div class="container">
       <div class="row">
 	  <div class="page-title">what do you feel like doing?</div>
@@ -57,6 +78,5 @@ Shadow Opera Group</div>
 	  </div>
   </div>
 </div>
-
   </body>
 </html>

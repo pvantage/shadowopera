@@ -21,6 +21,7 @@ body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
     border: 1px solid #000;
     margin: 0 auto;
     width: 100%;
+	float:left;
 }
 header {
     background: #222222;
@@ -42,6 +43,7 @@ header {
 }
 .wrapper .container {
     width: 100%;
+	float:left;
 }
 .page-title {
     background: #343333;
@@ -477,6 +479,17 @@ body .events-section {
 .entblck .button{ padding:1px 0px;}
 }
 @media (min-width: 320px) and (max-width: 480px) {
+.newmenumain .navbar-collapse{ top:31px;}	
+body .newmenumain .navbar-toggle span.icon-bar {
+    height: 2px !important;
+    margin-top: 5px;
+    width: 23px;
+}
+}	
+.newmenumain .navbar-toggle {
+    margin-bottom: 0px;
+	    margin-top: 0px !important;
+}	
 .evt-ftr {
     margin-top: 2px;
 }	
@@ -540,3 +553,90 @@ ul.afterclieckshow{ margin-top:23px;}
 .lyrics-right label{ text-align:left;}
 .lyrics-right span{ text-align:left;}
 }
+
+
+/*Nav Css start here*/
+.navbar-header {
+  float: none;
+}
+.navbar-toggle {
+  display: block;
+}
+.navbar-collapse.collapse {
+  display: none!important;
+}
+.navbar-nav {
+  float: none!important;
+}
+.navbar-nav>li {
+  float: none;
+}
+.navbar-collapse.collapse{ overflow:hidden!important}
+.navbar-collapse.collapse.in{
+  display:block !important;
+}
+.navbar-collapse{
+    position: absolute;
+    left: 0px;
+    top: 43px;
+    padding: 0px;
+    background: #626262;
+    z-index: 99;
+    width: 100%;
+    text-align: left;
+	height:auto!important
+}
+.navbar-collapse{ padding:0px;}
+
+.navbar-inverse{ border:none; background-color:transparent; margin:0px; min-height:auto;}
+
+
+
+header.newmenumain {
+    float: left;
+    width: 100%;
+}
+
+.newmenumain .navbar-toggle {
+    float: left;
+    margin-left: 25px;
+    border: none;
+    padding: 0px;
+    margin-top: 7px;
+}
+.newmenumain .navbar-toggle:hover {
+    background: none;
+}
+.newmenumain .navbar-toggle:hover span.icon-bar {background: #fff;} 
+.newmenumain .navbar-toggle span.icon-bar {
+    height: 3px !important;
+    margin-top: 6px;
+    width: 28px;
+    border-radius: 0px;
+    background: #707070;
+}
+.newmenumain .header-menu {
+    float: left;
+    width: 100%;
+}
+header.newmenumain {
+      padding: 5px 0px 5px;
+}
+
+
+.newmenumain .navbar-nav>li>a{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    float: left;
+    width: 100%;
+    padding: 11px 26px;
+    font-weight: 400;
+    border-bottom: 1px solid #868686;
+}
+.newmenumain ul.nav.navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
