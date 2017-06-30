@@ -45,11 +45,21 @@ function getAudio(){
 				
 				if(data['src'])
 				{
-					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><div class="audio_wrapper">';					
-					html_wrapper += '<audio controls autoplay>';
-					html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
-					html_wrapper += 'Your browser does not support audio player';
-					html_wrapper += '</audio>';					
+					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><div class="audio_wrapper">';	
+					
+					if(data['media_file_type'] == 'video')
+					{				
+						html_wrapper += '<video width="100%" controls autoplay>';
+						html_wrapper += '<source src="'+ data['src'] + '" type="video/mp4">';						
+						html_wrapper += 'Your browser does not support video player';
+						html_wrapper += '</video>';
+					}else{
+						html_wrapper += '<audio controls autoplay>';
+						html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
+						html_wrapper += 'Your browser does not support audio player';
+						html_wrapper += '</audio>';
+					}
+										
 					
 					html_wrapper += '</div></div>';	
 				}
