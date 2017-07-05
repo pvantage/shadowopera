@@ -19,7 +19,24 @@
 	<plugin name="cordova-plugin-splashscreen" />
 	<plugin name="cordova-plugin-screen-orientation" />
 	<preference name="fullscreen" value="true" />
-	<preference name="StatusBarOverlaysWebView" value="true" />	
+	<preference name="StatusBarOverlaysWebView" value="true" />
+	
+	<js-module src="js/orientationLock.js" name="OrientationLock">
+		<clobbers target="OrientationLock" />
+	</js-module>
+	
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="OrientationLock" >
+				<param name="android-package" value="com.plugin.phonegap.OrientationLock"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/com/plugin/phonegap/OrientationLock.java" target-dir="src/com/plugin/phonegap/" />
+
+	</platform>
+		
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
 	<icon src="res/icon/ios/Icon-180.png" gap:platform="android" gap:density="ldpi" />
