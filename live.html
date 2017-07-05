@@ -13,7 +13,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script>
+<script type="text/javascript">
+screen.orientation.lock('landscape');
+
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
