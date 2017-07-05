@@ -20,7 +20,7 @@
 	<plugin name="cordova-plugin-screen-orientation" />
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
-	<preference name="orientation" value="landscape" />
+	<!--<preference name="orientation" value="landscape" />-->
 		
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
