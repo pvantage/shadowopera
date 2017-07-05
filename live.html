@@ -12,11 +12,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script type="text/javascript" src="js/orientationLock.js"></script>
-<script type="text/javascript">
-    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-</script>
-
 <script type="text/javascript">
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
@@ -73,9 +68,36 @@ function getEvent(){
 			getEvent();
 			//alert("5 second passed.");			
 	}, 5000);
+	
+function forceLandscape() {
+   
+
+
+        var orientation = window.orientation;
+        var new_orientation = 0;
+        switch (orientation) {
+            case 90:
+                break;
+           case -90:
+                new_orientation = 180
+                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                break;
+          case 180:
+                new_orientation = 270;
+                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                break;
+            case 0:
+                new_orientation = 90;
+                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                break;
+            default:
+                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+        } 
+}	
+	
 </script>
 </head>
-<body onLoad="getEvent();">
+<body onLoad="getEvent(); forceLandscape();">
 <div class="wrapper">
 <header>
 <div class="header-top">
