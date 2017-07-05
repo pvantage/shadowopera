@@ -68,36 +68,21 @@ function getEvent(){
 			getEvent();
 			//alert("5 second passed.");			
 	}, 5000);
-	
-function forceLandscape() {
-
-        var orientation = window.orientation;
-		
-		alert(orientation);
-        var new_orientation = 0;
-        switch (orientation) {
-            case 90:
-                break;
-           case -90:
-                new_orientation = 180
-                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
-                break;
-          case 180:
-                new_orientation = 270;
-                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
-                break;
-            case 0:
-                new_orientation = 90;
-                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
-                break;
-            default:
-                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
-        } 
-}	
-	
 </script>
+
+<style>
+body{
+   transform:rotate(90deg);
+-ms-transform:rotate(90deg); 
+-moz-transform:rotate(90deg);
+-webkit-transform:rotate(90deg); 
+-o-transform:rotate(90deg);
+   transform:rotate(90deg);
+} 
+</style>
+
 </head>
-<body onLoad="getEvent(); forceLandscape();">
+<body onLoad="getEvent();">
 <div class="wrapper">
 <header>
 <div class="header-top">
