@@ -70,28 +70,28 @@ function getEvent(){
 	}, 5000);
 	
 function forceLandscape() {
-   
-
 
         var orientation = window.orientation;
+		
+		alert(orientation);
         var new_orientation = 0;
         switch (orientation) {
             case 90:
                 break;
            case -90:
                 new_orientation = 180
-                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
                 break;
           case 180:
                 new_orientation = 270;
-                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
                 break;
             case 0:
                 new_orientation = 90;
-                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
                 break;
             default:
-                $('body').css({ ".ui-mobile,.ui-mobile .ui-page{min-height:300px} -webkit-transform": "rotate(" + new_orientation + "deg);" });
+                $('body').css({ "-webkit-transform": "rotate(" + new_orientation + "deg);" });
         } 
 }	
 	
