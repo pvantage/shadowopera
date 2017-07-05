@@ -12,7 +12,7 @@
     <author href="http://www.vantagewebtech.com" email="vantage.krishna@gmail.com">
       Krishna Kumar
     </author>
-	<preference name="phonegap-version" value="cli-6.4.0" />		
+	<preference name="phonegap-version" value="cli-6.5.0" />		
 	<plugin name="cordova-plugin-device" spec="~1.1.6" />
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />	
 	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
@@ -20,22 +20,6 @@
 	<plugin name="cordova-plugin-screen-orientation" />
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
-	
-	<js-module src="js/orientationLock.js" name="OrientationLock">
-		<clobbers target="OrientationLock" />
-	</js-module>
-	
-	<platform name="android">
-
-		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="OrientationLock" >
-				<param name="android-package" value="com.plugin.phonegap.OrientationLock"/>
-			</feature>
-		</config-file>
-
-		<source-file src="src/com/plugin/phonegap/OrientationLock.java" target-dir="src/com/plugin/phonegap/" />
-
-	</platform>
 		
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
@@ -55,8 +39,7 @@
 	<!--Iphone icons-->
 	<splash src="splash.png" />
 	<preference name="SplashScreen" value="res/screen/ios/Default-568h@2x~iphone.png" />  
-	<splash src="res/screen/ios/Default-568h@2x~iphone.png"/>  
-  
+	<splash src="res/screen/ios/Default-568h@2x~iphone.png"/> 
   
 	<icon height="57" platform="ios" src="res/icon/ios/Icon.png" width="57" />  
 	<icon height="114" platform="ios" src="res/icon/ios/Icon@2x.png" width="114" />  

@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Shadow Opera Group</title>
 
 <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
@@ -13,9 +12,11 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script>
-    window.plugins.orientationLock.lock("landscape");
-</script><script type="text/javascript">
+<script type="text/javascript">
+    screen.orientation.lock('landscape');
+</script>
+
+<script type="text/javascript">
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
@@ -62,20 +63,17 @@ function getEvent(){
 							
 						
 					}else{
-						$("#lyrics").html('Sorry, no lyrics playing. Please try back later.');
-			}		
-	   }
+					$("#lyrics").html('Sorry, no lyrics playing. Please try back later.');
+				}		
+	   	}
    });	
 }
-
-
     window.setInterval(function(){
 			getEvent();
-			//alert("5 second passed.");
-			
-		 }, 5000);
+			//alert("5 second passed.");			
+	}, 5000);
 </script>
-  </head>
+</head>
 <body onLoad="getEvent();">
 <div class="wrapper">
 <header>
