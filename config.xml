@@ -19,6 +19,7 @@
 	<plugin name="cordova-plugin-splashscreen" />
 	<plugin name="cordova-plugin-screen-orientation" />
 	<preference name="fullscreen" value="true" />
+	<preference name="StatusBarOverlaysWebView" value="true" />	
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
 	<icon src="res/icon/ios/Icon-180.png" gap:platform="android" gap:density="ldpi" />

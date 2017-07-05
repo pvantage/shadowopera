@@ -13,9 +13,16 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script type="text/javascript">
-screen.orientation.lock('landscape');
+<script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady()
+    {
 
+       var so = cordova.plugins.screenorientation;
+       so.setOrientation(so.Orientation.LANDSCAPE);
+    }
+</script>
+<script type="text/javascript">
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
