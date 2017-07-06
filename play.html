@@ -38,14 +38,14 @@ function getAudio(){
 				
 				if(data['image'])
 				{
-					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><img src="' + data['image'] + '" alt="" /></div>';	
+					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playimgbox"><img src="' + data['image'] + '" alt="" /></div>';	
 				}
 				
-				html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">'+ data['info'] + '</div>';
+				html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playtextbox">'+ data['info'] + '</div>';
 				
 				if(data['src'])
 				{
-					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><div class="audio_wrapper">';	
+					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playvideobox"><div class="audio_wrapper">';	
 					
 					if(data['media_file_type'] == 'video')
 					{				

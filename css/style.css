@@ -17,11 +17,18 @@ img{border:none; max-width:100%; height:auto;}
 h1,h2,h3,h4,h5,h6,h7,p,span{ margin:0px; padding:0px;}
 body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
 .wrapper {
-    max-width: 100%;
+    max-width: 1200px;
     border: 1px solid #000;
     margin: 0 auto;
     width: 100%;
 	float:left;
+}
+.livepagecnt .page-title {
+    display: none;
+}
+
+.playtextbox {
+    margin-top: 15px;
 }
 .playermainpage{    background: #535353;}
 .playermainpage p {
@@ -122,26 +129,31 @@ a.fp-button:hover {
 }
 .live-lyrics {
     background: #222222;
-    padding: 35px 20px;
+    padding: 12px 20px;
     float: left;
     width: 100%;
 }
+.live-lyricscontainer h2#director {
+    display: none;
+}
+.live-lyricscontainer label#composer {
+    display: none;
+}
 .lyrics-left {
     float: left;
-    width: 70%;
+    width: auto;
 }	
 .lyrics-right {
-    width: 30%;
+    width: auto;
     float: right;
 }
 .live-lyricscontainer {
-    padding: 15px;
 	overflow:hidden;
 }
 .live-lyrics h1 {
     margin: 0px;
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: normal;
 	font-family: 'Conv_nyala_0';
 }
@@ -153,6 +165,22 @@ a.fp-button:hover {
 	text-transform:uppercase;
 	    margin-top: 6px;
 		    font-family: 'Open Sans', sans-serif;
+}
+.lyrics-main {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #5f5f5f;
+    padding-bottom: 9px;
+	    margin-bottom: 5px;
+}
+.live-lyrics .paragraph {
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+}
+.live-lyrics .paragraph p {
+    text-align: center;
+    margin-bottom: 10px;
 }
 .lyrics-right span {
     font-size: 12px;
@@ -210,14 +238,14 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
 .film-img img {
     width: 100%;
 }	
-.lyrics-right{ text-align:right; margin:10px 0; padding:0px;}
+.lyrics-right{ text-align:right;  padding:0px;}
 .film-content h1 {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     margin-bottom: 0px;
 }
-.lyrics-right span{ display:block; margin:0px!important; text-align:right; float:none;}
+.lyrics-right span{  margin:0px!important; text-align:right; float:none;}
 
 .film-content h1 a{ color:#fff;}
 .film-content p {
@@ -517,7 +545,6 @@ a.fp-button {font-size: 16px; padding: 4px 13px;border-radius: 3px;}
 .film-main {    padding: 10px 0px;}
 .first-phase {    padding: 10px;}
 .fp-block {   margin-bottom: 10px;}
-.live-lyricscontainer {   padding: 10px;}
 .paragraph {   margin-top: 0px;}
 .film-action{    padding-top: 23px;}
 .film-main .film-content {
@@ -563,7 +590,6 @@ ul.afterclieckshow{ margin-top:38px;}
 .entblck .button {
     margin-right: 5px;
 }
-.lyrics-right{ width:100%; padding:10px 0;}
 .lyrics-right label{ text-align:left;}
 .lyrics-right span{ text-align:left;}
 }
