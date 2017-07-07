@@ -13,6 +13,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
+
+
+
 <script>
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
@@ -74,38 +77,11 @@ function getEvent(){
 		 }, 5000);
 </script>
 <style>
-
-header {
--webkit-transform: rotate(90deg);
-position: absolute;
-top: 0;
-    right: -22px;
-    padding-left: 51px !important;
-}
-
-.live-lyrics{
--webkit-transform: rotate(90deg);
-position:relative;
-
-}
-.live-lyrics {
-    -webkit-transform: rotate(90deg);
-    position: absolute;
-    top: 116px;
-    z-index: 10;
-    /* left: 0; */
-    right: 0;
-}
-
-header {
-    -webkit-transform: rotate(90deg);
-    /* overflow: hidden; */
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-left: 70px !important;
-}
+ html { transform: rotate(-90deg); transform-origin: left top; width: 100vh; overflow-x: hidden; position: absolute; top: 100%; left: 0; } 
 </style>
+
+
+
 
   </head>
 <body class="livelyrics" onLoad="getEvent();">
