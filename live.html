@@ -77,7 +77,25 @@ function getEvent(){
 		 }, 5000);
 </script>
 <style>
- html { transform: rotate(-90deg); transform-origin: left top; width: 100vh; overflow-x: hidden; position: absolute; top: 100%; left: 0; } 
+ html { 
+ transform:rotate(-90deg); 
+ -moz-transform:rotate(-90deg); 
+ -ms-transform:rotate(-90deg);
+ -o-transform:rotate(-90deg);
+ -webkit-transform:rotate(-90deg);
+ 
+  transform-origin: left top; 
+ -moz-transform-origin: left top; 
+ -ms-transform-origin: left top;
+ -o-transform-origin: left top;
+ -webkit-transform-origin: left top;
+ 
+
+ width: 100vh; overflow-x: hidden; 
+ position: absolute; 
+ top: 100%; left: 0; 
+ background:#333 !important;
+ } 
 </style>
 
 
