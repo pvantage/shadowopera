@@ -14,9 +14,6 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script>
-screen.orientation.unlock();
-screen.orientation.lock('portrait');
-
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
@@ -76,6 +73,19 @@ function getEvent(){
 			
 		 }, 5000);
 </script>
+<style>
+
+body {
+-webkit-transform: rotate(90deg);
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 0; 
+}
+</style>
+
   </head>
 <body class="livelyrics" onLoad="getEvent();">
 <div class="wrapper">
@@ -90,7 +100,7 @@ function getEvent(){
     <li><a href="./programme.html">Programme</a></li>	
   </ul>
 </div>
-Shadow Opera Group</div>
+</div>
 </header>
   <div class="container livepagecnt">
       <div class="row">

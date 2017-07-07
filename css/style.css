@@ -23,6 +23,7 @@ body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
 	float:left;
 }
 
+.lyrics-main{ display:none;}
 body.livelyrics {
     BACKGROUND: #222222;
 }
@@ -182,6 +183,7 @@ a.fp-button:hover {
     margin-top: 0px;
     float: left;
     width: 100%;
+    padding-top: 12px;
 }
 .live-lyrics .paragraph p {
     text-align: center;
