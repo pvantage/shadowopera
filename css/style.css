@@ -22,7 +22,13 @@ body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
     width: 100%;
 	float:left;
 }
-
+.prog_txt {
+      font-size: 14px;
+    color: #cbcbcb;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+   
+}
 .lyrics-main{ display:none;}
 body.livelyrics {
     BACKGROUND: #222222;
@@ -34,7 +40,18 @@ body.livelyrics {
     margin-bottom: 30px;
 }
 .playtextbox {
-    margin-top: 15px;
+    margin-top: 0px;
+    float: left;
+    width: 65%;
+	    font-size: 14px;
+    color: #cbcbcb;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+}
+.playimgbox {
+    float: left;
+    width: 32%;
+    margin-right: 0px;
 }
 .playermainpage{    background: #535353;}
 .playermainpage p {
