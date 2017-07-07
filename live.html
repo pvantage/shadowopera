@@ -14,6 +14,9 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script>
+screen.orientation.unlock();
+screen.orientation.lock('portrait');
+
 jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
