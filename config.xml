@@ -82,10 +82,15 @@
    
     <plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
     <allow-intent href="http://*/*" />
+	<allow-intent href="file://*/*" />
     <allow-intent href="https://*/*" />
+	<allow-intent src="http://*/*" />
+    <allow-intent src="https://*/*" />
+	<allow-intent src="file://*/*" />
+	<allow-intent href="//www.*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-	<access origin="*" />	
+	<access origin="cdvfile://*" />	
 </widget>
