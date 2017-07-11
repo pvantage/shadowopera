@@ -56,7 +56,9 @@ function getEvent(){
 								$("#composer").html(data['composer']);
 								$("#date").html(data['event_date']);
 								$("#time").html(data['event_time']);				
-								//alert(data['lyrics']);					
+								//alert(data['lyrics']);
+								var lycs=jQuery('#lyrics').html();
+								if(lycs!=data['lyrics'])
 								$("#lyrics").html(data['lyrics']);
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}
