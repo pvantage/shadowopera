@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900');
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900');
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
 @font-face {
@@ -171,19 +171,21 @@ a.fp-button:hover {
     float: right;
 }
 .live-lyricscontainer {
-	overflow:hidden;
+	    float: left;
+    width: 100%;
 }
+
 .live-lyrics h1 {
     margin: 0px;
     color: #fff;
-    font-size: 18px;
+    //font-size: 18px;
     font-weight: normal;
 	font-family: 'Conv_nyala_0';
 }
 .live-lyrics h2 {
     margin: 0px;
     color: #fff;
-    font-size: 13px;
+   // font-size: 13px;
     font-weight: normal;
 	text-transform:uppercase;
 	    margin-top: 6px;
@@ -251,7 +253,6 @@ body .active-play h1, body .active-play span, body .active-play p, body .active-
     font-size: 18px;
     margin-top: 20px;
     font-weight: 300;
-    font-style: italic;
     font-family: 'Open Sans', sans-serif;
 }
 .paragraph {
