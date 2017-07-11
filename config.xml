@@ -87,5 +87,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+	<allow-navigation href="*://*" />
 	<access origin="cdvfile://*" />	
 </widget>
