@@ -14,13 +14,7 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 
-<script type="text/javascript">
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    StatusBar.overlaysWebView(true);
-	StatusBar.hide(true);
-}
-</script>
+
 
 <script>
 jQuery(document).ready(function(){
@@ -121,6 +115,19 @@ function getEvent(){
     float: left;
     width: 100%;
 }
+a.backbtn {
+    float: right;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif !important;
+    background: #02a7e3;
+    padding: 2px 10px;
+    border-radius: 3px;
+}
+.live-lyrics{ padding-top:0px;}
+header {
+    padding-bottom: 0px;
+}
 </style>
 
 
@@ -131,7 +138,7 @@ function getEvent(){
 <div class="wrapper">
 <header>
 <div class="header-top">
-<div class="header-menu">
+<!--<div class="header-menu">
 <div class="menubox"><img src="images/menu-icon.png"></div>
   <ul class="afterclieckshow">
     <li><a href="./index.html">Home</a></li>
@@ -139,7 +146,8 @@ function getEvent(){
     <li><a href="./film_audio.html">Film Video</a></li>
     <li><a href="./programme.html">Programme</a></li>	
   </ul>
-</div>
+</div>-->
+<a class="backbtn" href="index.html">Home</a>
 </div>
 </header>
   <div class="container livepagecnt">
