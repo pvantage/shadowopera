@@ -20,6 +20,8 @@
 	<plugin name="cordova-plugin-screen-orientation" />
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
+	<preference name="StatusBarBackgroundColor" value="#000000" />
+	<preference name="StatusBarStyle" value="lightcontent" />
 	<preference name="orientation" value="portrait" />
 		
 	<icon src="icon.png" />
