@@ -17,8 +17,10 @@
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
 	<plugin name="cordova-plugin-splashscreen" />
-	<plugin name="cordova-plugin-screen-orientation" />	
-	<preference name="orientation" value="portrait" />		
+	<plugin name="cordova-plugin-screen-orientation" />
+	<preference name="fullscreen" value="true" />	
+	<preference name="orientation" value="portrait" />
+		
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
 	<icon src="res/icon/ios/Icon-180.png" gap:platform="android" gap:density="ldpi" />
