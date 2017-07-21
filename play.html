@@ -49,12 +49,12 @@ function getAudio(){
 					
 					if(data['media_file_type'] == 'video')
 					{				
-						html_wrapper += '<video width="100%" controls autoplay>';
+						html_wrapper += '<video width="100%" controls="false" autoplay="true">';
 						html_wrapper += '<source src="'+ data['src'] + '" type="video/mp4">';						
 						html_wrapper += 'Your browser does not support video player';
 						html_wrapper += '</video>';
 					}else{
-						html_wrapper += '<audio controls autoplay>';
+						html_wrapper += '<audio controls="false" autoplay="true">';
 						html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
 						html_wrapper += 'Your browser does not support audio player';
 						html_wrapper += '</audio>';
@@ -64,7 +64,9 @@ function getAudio(){
 					html_wrapper += '</div></div>';	
 				}
 				
-					$(".player_det").html(html_wrapper);									
+					$(".player_det").html(html_wrapper);
+					
+				
 			   }
 		   });	
 	}

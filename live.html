@@ -45,13 +45,13 @@ function getEvent(){
 								$("#time").html(data['event_time']);
 								
 								$("#lyrics").fadeOut(function() {
-								var th=$("#lyrics").html();
-								$(".samecontent").html(data['lyrics']);
-								var th2=jQuery('.samecontent').html();
-								if(jQuery.trim(th)!=jQuery.trim(th2)){
-								  $(this).html(data['lyrics']).fadeIn();
-								  
-								  }
+									var th=$("#lyrics").html();
+									$(".samecontent").html(data['lyrics']);
+									var th2=jQuery('.samecontent').html();
+									if(jQuery.trim(th)!=jQuery.trim(th2)){
+									  $(this).html(data['lyrics']).fadeIn();
+									  
+									  }
 								});
 								
 								//alert(data['lyrics']);						
