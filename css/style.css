@@ -15,7 +15,7 @@ a{ text-decoration:none;}
 img{border:none; max-width:100%; height:auto;}
 .clr{ clear:both; margin:0px; padding:0px;}
 h1,h2,h3,h4,h5,h6,h7,p,span{ margin:0px; padding:0px;}
-body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; background:#000; }
+body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -102,9 +102,6 @@ header {
 }
 .first-phase {
     padding: 15px;
-	float:left;
-	background:#fff;
-	width:100%;
 }
 .fp-block {
     margin-bottom: 15px;
@@ -493,6 +490,39 @@ a.backbtn {
 
 .player_det{ padding:20px 0; width:100%;}.audio_wrapper{ width:100%; padding:20px 0 0 0;}
 audio{ width:100%;}
+
+.prodetailmain .filmaudio {
+    color: #fff;
+}
+.prodetailmain .filmaudio {
+    background: #fff;
+}
+.prodetailmain p img {
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+.prodetailmain p {
+    color: #000;
+    float: left;
+    width: 100%;
+	 margin-top: 10px;
+}
+.video {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.progr-det {
+    padding-top: 19px;
+}
+.directed_by {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+
 /**Responsive css start here**/
 
 .active-play .prog_txt{ color:#000;}

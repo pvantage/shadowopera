@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow Opera Group</title>
+
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+jQuery(document).ready(function(){
+    jQuery(".header-menu").click(function(){
+        jQuery(this).toggleClass("toggled");
+    });
+});
+</script>
+<script type="text/javascript">
+
+function getProgramme(){
+	
+	var url = siteurl + '?route=common/home/getprogramme';
+	var programme_id = gup('programme_id');	
+		
+	jQuery.ajax({ 
+			 type: 'POST',  
+			 url: url,  
+			 dataType: 'json', 
+			 data: {programme_id:programme_id}, 			
+			 crossDomain: true, 
+			 success: function(data){ 
+			 	 var prog_html = '';				 			
+						 			
+						$(".page-title").html(data['programe']['name']);
+						$(".directed_by").html('Directed By ' + data['programe']['prod_by']);
+						
+					prog_html += '<div class="col-md-12">';
+					
+					prog_html += '<div class="detail_description">' + data['programe']['detail_description'] + '</div>';
+                    if(data['programe']['video']) 
+					{
+						prog_html += '<div class="video">';						
+						prog_html += '<video width="100%" controls autoplay>';
+						prog_html += '<source src="'+ data['programe']['video'] + '" type="video/mp4">';						
+						prog_html += 'Your browser does not support video player';
+						prog_html += '</video>';
+						prog_html += '</div>';
+						
+					}   
+						
+					prog_html += '</div>';					
+										
+				
+				
+				$("#wrap_events").html(prog_html);
+					
+							
+			   }
+		   });	
+	}
+</script>
+</head>
+<body onLoad="getProgramme();">
+<div class="wrapper">
+<header>
+    <div class="header-top">
+    <div class="header-menu">
+    <div class="menubox"><img src="images/menu-icon.png"></div>
+      <ul class="afterclieckshow">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./live.html">Live LYRICS</a></li>
+        <li><a href="./film_audio.html">Film Video</a></li>
+        <li><a href="./programme.html">Programme</a></li>	
+      </ul>
+    </div>
+	Shadow Opera Group</div>
+</header>
+  <div class="container prodetailmain">
+      <div class="row">
+	  	<div class="page-title"></div>
+        
+            <div class="filmaudio progr-det">
+                <div class="filmaudio-mid">
+                    <div class="container">
+					<div class="directed_by"></div>
+                        <div class="row" id="wrap_events"></div>
+                    </div>
+                </div>
+            </div>
+		</div>
+     </div>
+  </div>
+</body>
+</html>

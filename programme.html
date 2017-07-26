@@ -10,7 +10,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
 <script type="text/javascript" src="js/config.js"></script>
 <script>
 jQuery(document).ready(function(){
@@ -47,12 +47,12 @@ function getProgramme(){
 						prog_html += '<div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 film-img">';
 						
                        if(data['events'][i]['image']){
-						    prog_html += '<img src="' + data['events'][i]['image']+ '">';
+						    prog_html += '<a href="./programme_detail.html?programme_id='+ data['events'][i]['event_id'] + '"><img src="' + data['events'][i]['image']+ '"></a>';
 					   }
                         prog_html += '</div>';
 						
                         prog_html += '<div class="col-md-9 col-lg-9 col-sm-9 col-xs-9 film-content">';
-                        prog_html += '<h1>' + data['events'][i]['name'] + '</h1>';
+                        prog_html += '<h1><a href="./programme_detail.html?programme_id='+ data['events'][i]['event_id'] + '">' + data['events'][i]['name'] + '</a></h1>';
                         prog_html += '<p>( Prod By ' +  data['events'][i]['prod_by'] + ' )</p>';
                         prog_html += '<div class="prog_txt">' + data['events'][i]['info']+ '</div>';
                         prog_html += '<label>' + data['events'][i]['date']+ '</label>';
