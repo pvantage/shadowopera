@@ -44,7 +44,7 @@ function getProgramme(){
                     if(data['programe']['video']) 
 					{
 						prog_html += '<div class="video">';						
-						prog_html += '<video width="100%" controls autoplay>';
+						prog_html += '<video id="detplayer" width="100%" controls autoplay>';
 						prog_html += '<source src="'+ data['programe']['video'] + '" type="video/mp4">';						
 						prog_html += 'Your browser does not support video player';
 						prog_html += '</video>';
@@ -57,6 +57,14 @@ function getProgramme(){
 				
 				
 				$("#wrap_events").html(prog_html);
+				
+				if(data['media_file_type'] == 'video')
+					{
+						var elem = document.getElementById("detplayer");
+						if (elem.requestFullscreen) {
+						  elem.requestFullscreen();
+						}
+					}
 					
 							
 			   }
