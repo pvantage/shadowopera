@@ -52,21 +52,14 @@ function getProgramme(){
 						
 					}   
 						
-					prog_html += '</div>';					
-										
-				
-				
-				$("#wrap_events").html(prog_html);
-				
-				if(data['programe']['video'])
-					{
-						var elem = document.getElementById("detplayer");
-						if (elem.requestFullscreen) {
-						  elem.requestFullscreen();
-						}
-					}
+					prog_html += '</div>';
 					
-							
+				if(data['programe']['script']) 
+				{					
+					prog_html += data['programe']['script'];				
+				}
+				
+				$("#wrap_events").html(prog_html);							
 			   }
 		   });	
 	}

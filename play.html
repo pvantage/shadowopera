@@ -61,19 +61,17 @@ function getAudio(){
 					}
 										
 					
-					html_wrapper += '</div></div>';	
+					html_wrapper += '</div></div>';
+					
+					if(data['script'])
+					{
+						html_wrapper += data['script'];
+					}	
 				}
 				
 					$(".player_det").html(html_wrapper);
 					
-					if(data['media_file_type'] == 'video')
-					{
-						var elem = document.getElementById("detplayer");
-						if (elem.requestFullscreen) {
-						  elem.requestFullscreen();
-						}
-					}
-				
+									
 			   }
 		   });	
 	}
