@@ -58,7 +58,7 @@ function getProgramme(){
 				
 				$("#wrap_events").html(prog_html);
 				
-				if(data['media_file_type'] == 'video')
+				if(data['programe']['video'])
 					{
 						var elem = document.getElementById("detplayer");
 						if (elem.requestFullscreen) {
