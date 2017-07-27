@@ -23,9 +23,6 @@
 	<preference name="orientation" value="portrait" />
 	<!--<preference name="AllowInlineMediaPlayback" value="true" />-->
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
-	<gap:config-file platform="android" parent="/manifest"> <application android:hardwareAccelerated="true" /> </gap:config-file>
-    <false/>
-</gap:config-file>
 	
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
