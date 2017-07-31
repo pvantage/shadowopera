@@ -21,7 +21,11 @@
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="orientation" value="portrait" />
-	<preference name="AllowInlineMediaPlayback" value="true" />		
+	<!--<preference name="AllowInlineMediaPlayback" value="true" />-->
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+    <false/>
+</gap:config-file>
+	
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
 	<icon src="res/icon/ios/Icon-180.png" gap:platform="android" gap:density="ldpi" />
@@ -39,7 +43,9 @@
 	
 	<!--Iphone icons-->
 	<splash src="splash.png" />
-	<preference name="SplashScreen" value="res/screen/ios/Default-568h@2x~iphone.png" />	 
+	<preference name="SplashScreen" value="res/screen/ios/Default-568h@2x~iphone.png" />
+	<!--<splash src="res/screen/ios/Default-568h@2x~iphone.png"/> -->
+  
 	<icon height="57" platform="ios" src="res/icon/ios/Icon.png" width="57" />  
 	<icon height="114" platform="ios" src="res/icon/ios/Icon@2x.png" width="114" />  
 	<icon height="80" platform="ios" src="res/icon/ios/Icon-40@3x.png" width="80" />  

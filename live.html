@@ -45,24 +45,25 @@ function getEvent(){
 								$("#time").html(data['event_time']);
 								
 								$("#lyrics").fadeOut(function() {
-									var th=$("#lyrics").html();
-									$(".samecontent").html(data['lyrics']);
-									var th2=jQuery('.samecontent').html();
-									if(jQuery.trim(th)!=jQuery.trim(th2)){
-									  $(this).html(data['lyrics']).fadeIn();
-									  
-									  }
+								var th=$("#lyrics").html();
+								$(".samecontent").html(data['lyrics']);
+								var th2=jQuery('.samecontent').html();
+								if(jQuery.trim(th)!=jQuery.trim(th2)){
+								  $(this).html(data['lyrics']).fadeIn();
+								  
+								  }
 								});
 								
 								//alert(data['lyrics']);						
 								//$("#lyrics").html(data['lyrics']);
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}else{
-								/*$("#event_title").html(data['name']);
+							$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
 								$("#date").html(data['event_date']);
-								$("#time").html(data['event_time']);								
+								$("#time").html(data['event_time']);				
+								//alert(data['lyrics']);	
 								var th=$("#lyrics").html();
 								$(".samecontent").html(data['lyrics']);
 								var th2=jQuery('.samecontent').html();
@@ -70,7 +71,7 @@ function getEvent(){
 									$("#lyrics").html(data['lyrics']);
 									
 								}
-								localStorage.setItem('lyric_id', data['lyric_id']);*/
+								localStorage.setItem('lyric_id', data['lyric_id']);
 						}
 							
 						
@@ -103,7 +104,7 @@ function getEvent(){
  -webkit-transform-origin: left top;
  
 
- width: 100vh;  height: 100vh;overflow-x: hidden; 
+ width: 100vh;  overflow-x: hidden; 
  position: absolute; 
  top: 100%; left: 0; 
  background:#222222 !important;
@@ -125,8 +126,28 @@ a.backbtn {
 }
 .live-lyrics{ padding-top:0px;}
 header {
+     position: absolute;
+    padding: 0px;
+    background: none;
+      top: 9px;
+    right: 40px;
+}
+.live-lyrics{ padding:0px;}
+.live-lyrics .paragraph {
+	 padding-top: 0px;;
     padding-bottom: 0px;
 }
+.live-lyrics .paragraph p {
+ margin-bottom: 0px; 
+}
+.live-lyrics .paragraph iframe {
+    width: 100% !important;
+    position: absolute;
+    left: 0;
+    height: 320px;
+    right: 0;
+}
+
 </style>
 
 
