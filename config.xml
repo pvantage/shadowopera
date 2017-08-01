@@ -14,13 +14,15 @@
     </author>
 	<preference name="phonegap-version" value="cli-6.5.0" />
 	<plugin name="cordova-plugin-device" spec="~1.1.6" />
-	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+	<!--<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
 	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
 	<plugin name="cordova-plugin-splashscreen" />
-	<plugin name="cordova-plugin-screen-orientation" />
+	<!--<plugin name="cordova-plugin-screen-orientation" />-->
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="orientation" value="portrait" />
+	<plugin name="cordova-plugin-screen-orientation" source="npm" />
+	<plugin name="cordova-plugin-streaming-media" source="npm" />
 	<!--<preference name="AllowInlineMediaPlayback" value="true" />-->
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
     <false/>

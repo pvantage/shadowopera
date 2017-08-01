@@ -21,6 +21,7 @@ jQuery(document).ready(function(){
     jQuery(".header-menu").click(function(){
         jQuery(this).toggleClass("toggled");
     });
+
 });
 </script>
 <script type="text/javascript">
@@ -38,6 +39,60 @@ function getEvent(){
 					{						
 						if(localStorage.getItem('lyric_id') != data['lyric_id'])
 						{
+							if(data['video'])
+							{
+									var deviceplatform=localStorage.getItem('deviceplatform');
+									if(deviceplatform!='iOS'){
+										var videoUrl = data['video'];
+					
+										  // Just play a video
+										  window.plugins.streamingMedia.playVideo(videoUrl);
+										
+										  // Play a video with callbacks
+										  var options = {
+											successCallback: function() {
+											  //alert("Video was closed without error.");
+											},
+											errorCallback: function(errMsg) {
+											  //alert("Error! " + errMsg);
+											  window.location='index.html';
+											},
+											orientation: 'landscape',
+											shouldAutoClose: true,  
+											controls: true 
+										  };
+										  window.plugins.streamingMedia.playVideo(videoUrl, options);
+									}else{
+										
+										$("#event_title").html(data['name']);
+										$("#director").html(data['director']);
+										$("#composer").html(data['composer']);
+										$("#date").html(data['event_date']);
+										$("#time").html(data['event_time']);
+										
+										$("#lyrics").fadeOut(function() {
+										var th = $("#lyrics").html();
+										
+										var lyric = data['lyrics'];
+										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
+										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
+										lyric += '';
+										
+										$(".samecontent").html(lyric);
+										
+										
+										var th2=jQuery('.samecontent').html();
+										if(jQuery.trim(th)!=jQuery.trim(th2)){
+										  $(this).html(data['lyrics']).fadeIn();
+										  
+										  }
+										});		
+										
+								  }
+							
+							}else{
+
+
 								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
@@ -46,24 +101,83 @@ function getEvent(){
 								
 								$("#lyrics").fadeOut(function() {
 								var th=$("#lyrics").html();
+								
+								
+								
 								$(".samecontent").html(data['lyrics']);
+								
+								
 								var th2=jQuery('.samecontent').html();
 								if(jQuery.trim(th)!=jQuery.trim(th2)){
 								  $(this).html(data['lyrics']).fadeIn();
 								  
 								  }
 								});
+							}
 								
-								//alert(data['lyrics']);						
-								//$("#lyrics").html(data['lyrics']);
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}else{
-							$("#event_title").html(data['name']);
+								
+								
+							if(data['video'])
+							{
+									var deviceplatform=localStorage.getItem('deviceplatform');
+									if(deviceplatform!='iOS'){
+										var videoUrl = data['video'];
+					
+										  // Just play a video
+										  window.plugins.streamingMedia.playVideo(videoUrl);
+										
+										  // Play a video with callbacks
+										  var options = {
+											successCallback: function() {
+											  //alert("Video was closed without error.");
+											},
+											errorCallback: function(errMsg) {
+											  //alert("Error! " + errMsg);
+											  window.location='index.html';
+											},
+											orientation: 'landscape',
+											shouldAutoClose: true,  
+											controls: true 
+										  };
+										  window.plugins.streamingMedia.playVideo(videoUrl, options);
+									}else{
+										
+										$("#event_title").html(data['name']);
+										$("#director").html(data['director']);
+										$("#composer").html(data['composer']);
+										$("#date").html(data['event_date']);
+										$("#time").html(data['event_time']);
+										
+										$("#lyrics").fadeOut(function() {
+										var th = $("#lyrics").html();
+										
+										var lyric = data['lyrics'];
+										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
+										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
+										lyric += '';
+										
+										$(".samecontent").html(lyric);
+										
+										
+										var th2=jQuery('.samecontent').html();
+										if(jQuery.trim(th)!=jQuery.trim(th2)){
+										  $(this).html(data['lyrics']).fadeIn();
+										  
+										  }
+										});		
+										
+								  }
+							
+							}else{	
+								
+								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
 								$("#date").html(data['event_date']);
 								$("#time").html(data['event_time']);				
-								//alert(data['lyrics']);	
+								
 								var th=$("#lyrics").html();
 								$(".samecontent").html(data['lyrics']);
 								var th2=jQuery('.samecontent').html();
@@ -71,6 +185,11 @@ function getEvent(){
 									$("#lyrics").html(data['lyrics']);
 									
 								}
+								
+							}
+								
+								
+								
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}
 							
@@ -90,25 +209,7 @@ function getEvent(){
 		 }, 5000);
 </script>
 <style>
- body { 
- transform:rotate(-90deg); 
- -moz-transform:rotate(-90deg); 
- -ms-transform:rotate(-90deg);
- -o-transform:rotate(-90deg);
- -webkit-transform:rotate(-90deg);
- 
-  transform-origin: left top; 
- -moz-transform-origin: left top; 
- -ms-transform-origin: left top;
- -o-transform-origin: left top;
- -webkit-transform-origin: left top;
- 
 
- width: 100vh;  overflow-x: hidden; 
- position: absolute; 
- top: 100%; left: 0; 
- background:#222222 !important;
- } 
  
  html{ background:#222222 !important;}
  header {
@@ -123,30 +224,25 @@ a.backbtn {
     background: #02a7e3;
     padding: 2px 10px;
     border-radius: 3px;
+	    margin-right: 0;
+
 }
-.live-lyrics{ padding-top:0px;}
+.live-lyrics {
+    padding: 0px;
+}
 header {
      position: absolute;
     padding: 0px;
     background: none;
       top: 9px;
     right: 40px;
+	z-index: 999;
 }
-.live-lyrics{ padding:0px;}
-.live-lyrics .paragraph {
-	 padding-top: 0px;;
-    padding-bottom: 0px;
-}
+.live-lyrics .paragraph{ padding-top:0px;}
 .live-lyrics .paragraph p {
- margin-bottom: 0px; 
+    margin-top: 10px;
 }
-.live-lyrics .paragraph iframe {
-    width: 100% !important;
-    position: absolute;
-    left: 0;
-    height: 320px;
-    right: 0;
-}
+
 
 </style>
 
@@ -195,4 +291,18 @@ header {
     </div>
    </div>
  </body>
+ <script>
+ $(document).ready(function(){
+    resizeContent();
+
+    $(window).resize(function() {
+        resizeContent();
+    });
+});
+
+function resizeContent() {
+    $height = $(window).height() - 46;
+    $('body video').height($height);
+}
+ </script>
 </html>

@@ -45,28 +45,54 @@ function getAudio(){
 				
 				if(data['src'])
 				{
-					html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playvideobox"><div class="audio_wrapper">';	
-					
-					if(data['media_file_type'] == 'video')
-					{				
-						html_wrapper += '<video id="detplayer" width="100%" controls="false" autoplay="true">';
-						html_wrapper += '<source src="'+ data['src'] + '" type="video/mp4">';						
-						html_wrapper += 'Your browser does not support video player';
-						html_wrapper += '</video>';
-					}else{
-						html_wrapper += '<audio controls="false" autoplay="true">';
-						html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
-						html_wrapper += 'Your browser does not support audio player';
-						html_wrapper += '</audio>';
+					var deviceplatform=localStorage.getItem('deviceplatform');
+					if(deviceplatform!='iOS'){
+						var videoUrl = data['src'];
+	
+						  // Just play a video
+						  window.plugins.streamingMedia.playVideo(videoUrl);
+						
+						  // Play a video with callbacks
+						  var options = {
+							successCallback: function() {
+							  //alert("Video was closed without error.");
+							},
+							errorCallback: function(errMsg) {
+							  //alert("Error! " + errMsg);
+							  window.location='film_audio.html';
+							},
+							orientation: 'landscape',
+							shouldAutoClose: true,  // true(default)/false
+							controls: true // true(default)/false. Used to hide controls on fullscreen
+						  };
+						  window.plugins.streamingMedia.playVideo(videoUrl, options);
 					}
-										
-					
-					html_wrapper += '</div></div>';
-					
-					if(data['script'])
+					else
 					{
-						html_wrapper += data['script'];
-					}	
+
+						html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playvideobox"><div class="audio_wrapper">';	
+						
+						if(data['media_file_type'] == 'video')
+						{				
+							html_wrapper += '<video id="detplayer" width="100%" controls="false" autoplay="true">';
+							html_wrapper += '<source src="'+ data['src'] + '" type="video/mp4">';						
+							html_wrapper += 'Your browser does not support video player';
+							html_wrapper += '</video>';
+						}else{
+							html_wrapper += '<audio controls="false" autoplay="true">';
+							html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
+							html_wrapper += 'Your browser does not support audio player';
+							html_wrapper += '</audio>';
+						}
+											
+						
+						html_wrapper += '</div></div>';
+						
+						if(data['script'])
+						{
+							html_wrapper += data['script'];
+						}	
+					}
 				}
 				
 					$(".player_det").html(html_wrapper);
