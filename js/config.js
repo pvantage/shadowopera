@@ -19,3 +19,28 @@ function gotoBack(){
 	history.go(-1);
     navigator.app.backHistory();	
 }
+
+window.addEventListener("orientationchange", function(){
+   
+});
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
+	
+	localStorage.setItem('deviceplatform', device.platform);
+	var path = window.location.pathname;
+	var page = path.split("/").pop();
+
+	
+	if(page=='live.html'){
+		screen.orientation.lock('landscape');
+		screen.orientation.lock('landscape-primary');
+		
+	}
+	else
+	{
+		screen.orientation.lock('portrait');
+		screen.orientation.lock('portrait-primary');
+	}
+	
+};
+
