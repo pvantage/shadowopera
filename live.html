@@ -11,7 +11,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
 <script type="text/javascript" src="js/config.js"></script>
 
 
@@ -38,31 +38,7 @@ function getEvent(){
 			 		if(data['play'])
 					{						
 						if(localStorage.getItem('lyric_id') != data['lyric_id'])
-						{
-							if(data['video'])
-							{
-									/*var deviceplatform=localStorage.getItem('deviceplatform');
-									if(deviceplatform!='iOS'){
-										var videoUrl = data['video'];
-					
-										  // Just play a video
-										  window.plugins.streamingMedia.playVideo(videoUrl);
-										
-										  // Play a video with callbacks
-										  var options = {
-											successCallback: function() {
-											  //alert("Video was closed without error.");
-											},
-											errorCallback: function(errMsg) {
-											  //alert("Error! " + errMsg);
-											  window.location='index.html';
-											},
-											orientation: 'landscape',
-											shouldAutoClose: true,  
-											controls: true 
-										  };
-										  window.plugins.streamingMedia.playVideo(videoUrl, options);
-									}else{*/
+						{							
 										
 										$("#event_title").html(data['name']);
 										$("#director").html(data['director']);
@@ -73,12 +49,8 @@ function getEvent(){
 										$("#lyrics").fadeOut(function() {
 										var th = $("#lyrics").html();
 										
-										var lyric = data['lyrics'];
-										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
-										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
-										lyric += '</video>';
-										
-										$(".samecontent").html(lyric);
+																				
+										$(".samecontent").html(data['lyrics']);
 										
 										
 										var th2=jQuery('.samecontent').html();
@@ -86,92 +58,13 @@ function getEvent(){
 										  $(this).html(data['lyrics']).fadeIn();
 										  
 										  }
-										});		
-										
-								  //}
-							
-							}else{
-
-
-								$("#event_title").html(data['name']);
-								$("#director").html(data['director']);
-								$("#composer").html(data['composer']);
-								$("#date").html(data['event_date']);
-								$("#time").html(data['event_time']);
-								
-								$("#lyrics").fadeOut(function() {
-								var th=$("#lyrics").html();
-								
-								
-								
-								$(".samecontent").html(data['lyrics']);
-								
-								
-								var th2=jQuery('.samecontent').html();
-								if(jQuery.trim(th)!=jQuery.trim(th2)){
-								  $(this).html(data['lyrics']).fadeIn();
-								  
-								  }
-								});
-							}
+										});	
+							resizeContent();
 								
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}else{
 								
-								
-							if(data['video'])
-							{/*
-									var deviceplatform=localStorage.getItem('deviceplatform');
-									if(deviceplatform!='iOS'){
-										var videoUrl = data['video'];
-					
-										  // Just play a video
-										  window.plugins.streamingMedia.playVideo(videoUrl);
-										
-										  // Play a video with callbacks
-										  var options = {
-											successCallback: function() {
-											  window.location='index.html';
-											},
-											errorCallback: function(errMsg) {
-											  //alert("Error! " + errMsg);
-											  window.location='index.html';
-											},
-											orientation: 'landscape',
-											shouldAutoClose: true,  
-											controls: true 
-										  };
-										  window.plugins.streamingMedia.playVideo(videoUrl, options);
-									}else{*/
-										
-										$("#event_title").html(data['name']);
-										$("#director").html(data['director']);
-										$("#composer").html(data['composer']);
-										$("#date").html(data['event_date']);
-										$("#time").html(data['event_time']);
-										
-										$("#lyrics").fadeOut(function() {
-										var th = $("#lyrics").html();
-										
-										var lyric = data['lyrics'];
-										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
-										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
-										lyric += '</video>';
-										
-										$(".samecontent").html(lyric);
-										
-										
-										var th2=jQuery('.samecontent').html();
-										if(jQuery.trim(th)!=jQuery.trim(th2)){
-										  $(this).html(data['lyrics']).fadeIn();
-										  
-										  }
-										});		
-										
-								  //}
 							
-							}else{	
-								
 								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
@@ -186,9 +79,9 @@ function getEvent(){
 									
 								}
 								
-							}
+							
 								
-								
+								resizeContent();
 								
 								localStorage.setItem('lyric_id', data['lyric_id']);
 						}
