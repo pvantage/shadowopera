@@ -11,7 +11,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 
 
@@ -38,39 +38,34 @@ function getEvent(){
 			 		if(data['play'])
 					{						
 						if(localStorage.getItem('lyric_id') != data['lyric_id'])
-						{							
-										
-										$("#event_title").html(data['name']);
-										$("#director").html(data['director']);
-										$("#composer").html(data['composer']);
-										$("#date").html(data['event_date']);
-										$("#time").html(data['event_time']);
-										
-										$("#lyrics").fadeOut(function() {
-										var th = $("#lyrics").html();
-										
-																				
-										$(".samecontent").html(data['lyrics']);
-										
-										
-										var th2=jQuery('.samecontent').html();
-										if(jQuery.trim(th)!=jQuery.trim(th2)){
-										  $(this).html(data['lyrics']).fadeIn();
-										  
-										  }
-										});	
-							resizeContent();
-								
-								localStorage.setItem('lyric_id', data['lyric_id']);
-						}else{
-								
-							
+						{
 								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
 								$("#date").html(data['event_date']);
-								$("#time").html(data['event_time']);				
+								$("#time").html(data['event_time']);
 								
+								$("#lyrics").fadeOut(function() {
+								var th=$("#lyrics").html();
+								$(".samecontent").html(data['lyrics']);
+								var th2=jQuery('.samecontent').html();
+								if(jQuery.trim(th)!=jQuery.trim(th2)){
+								  $(this).html(data['lyrics']).fadeIn();
+								  
+								  }
+								});
+								
+								//alert(data['lyrics']);						
+								//$("#lyrics").html(data['lyrics']);
+								localStorage.setItem('lyric_id', data['lyric_id']);
+								resizeContent();
+						}else{
+							$("#event_title").html(data['name']);
+								$("#director").html(data['director']);
+								$("#composer").html(data['composer']);
+								$("#date").html(data['event_date']);
+								$("#time").html(data['event_time']);				
+								//alert(data['lyrics']);	
 								var th=$("#lyrics").html();
 								$(".samecontent").html(data['lyrics']);
 								var th2=jQuery('.samecontent').html();
@@ -78,12 +73,8 @@ function getEvent(){
 									$("#lyrics").html(data['lyrics']);
 									
 								}
-								
-							
-								
-								resizeContent();
-								
 								localStorage.setItem('lyric_id', data['lyric_id']);
+								resizeContent();
 						}
 							
 						
@@ -135,10 +126,13 @@ header {
 .live-lyrics .paragraph p {
     margin-top: 10px;
 }
+video {
+    height: 100% !important;
+    position: absolute;
+}
 
 
 </style>
-
 
 
 
@@ -184,18 +178,20 @@ header {
     </div>
    </div>
  </body>
- <script>
- $(document).ready(function(){
+ 
+ 
+  <script>
+ jQuery(document).ready(function(){
     resizeContent();
 
-    $(window).resize(function() {
+    jQuery(window).resize(function() {
         resizeContent();
     });
 });
 
 function resizeContent() {
-    $height = $(window).height() - 46;
-    $('body video').height($height);
+    $height = jQuery (window).height() - 46;
+    jQuery('body video').height($height);
 }
  </script>
 </html>
