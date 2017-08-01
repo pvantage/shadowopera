@@ -41,7 +41,7 @@ function getEvent(){
 						{
 							if(data['video'])
 							{
-									var deviceplatform=localStorage.getItem('deviceplatform');
+									/*var deviceplatform=localStorage.getItem('deviceplatform');
 									if(deviceplatform!='iOS'){
 										var videoUrl = data['video'];
 					
@@ -62,7 +62,7 @@ function getEvent(){
 											controls: true 
 										  };
 										  window.plugins.streamingMedia.playVideo(videoUrl, options);
-									}else{
+									}else{*/
 										
 										$("#event_title").html(data['name']);
 										$("#director").html(data['director']);
@@ -76,7 +76,7 @@ function getEvent(){
 										var lyric = data['lyrics'];
 										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
 										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
-										lyric += '';
+										lyric += '</video>';
 										
 										$(".samecontent").html(lyric);
 										
@@ -88,7 +88,7 @@ function getEvent(){
 										  }
 										});		
 										
-								  }
+								  //}
 							
 							}else{
 
@@ -120,7 +120,7 @@ function getEvent(){
 								
 								
 							if(data['video'])
-							{
+							{/*
 									var deviceplatform=localStorage.getItem('deviceplatform');
 									if(deviceplatform!='iOS'){
 										var videoUrl = data['video'];
@@ -142,7 +142,7 @@ function getEvent(){
 											controls: true 
 										  };
 										  window.plugins.streamingMedia.playVideo(videoUrl, options);
-									}else{
+									}else{*/
 										
 										$("#event_title").html(data['name']);
 										$("#director").html(data['director']);
@@ -156,7 +156,7 @@ function getEvent(){
 										var lyric = data['lyrics'];
 										lyric += '<video width="100%" autoplay="true" playsinline="true" webkit-playsinline="true">';
 										lyric += '<source src="'+ data['video']+ '" type="video/mp4">';	
-										lyric += '';
+										lyric += '</video>';
 										
 										$(".samecontent").html(lyric);
 										
@@ -168,7 +168,7 @@ function getEvent(){
 										  }
 										});		
 										
-								  }
+								  //}
 							
 							}else{	
 								
