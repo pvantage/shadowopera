@@ -22,6 +22,7 @@ body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
     width: 100%;
 	float:left;
 }
+.pro-gram-box .film-content label{ display:none;}
 .prog_txt {
       font-size: 14px;
     color: #cbcbcb;
@@ -29,6 +30,12 @@ body {margin: 0; padding: 0; font-family: 'Roboto', sans-serif !important; }
     font-family: 'Roboto', sans-serif;
    
 }
+
+
+.pro-gram-box .filmaudio {
+    background: none;
+}
+
 .lyrics-main{ display:none;}
 body.livelyrics {
     BACKGROUND: #222222;

@@ -44,10 +44,14 @@ function getProgramme(){
                     if(data['programe']['video']) 
 					{
 						prog_html += '<div class="video">';						
-						prog_html += '<video id="detplayer" width="100%" controls autoplay>';
+						prog_html += '<a href="playvideo.html?vid='+data['programe']['video']+'">';
+						
+						prog_html += '<img src="images/play-video.jpg" alt="" />';
+						/*prog_html += '<video id="detplayer" width="100%" controls playsinline="true" webkit-playsinline="true">';
 						prog_html += '<source src="'+ data['programe']['video'] + '" type="video/mp4">';						
 						prog_html += 'Your browser does not support video player';
-						prog_html += '</video>';
+						prog_html += '</video>';*/
+						prog_html += '</a>';
 						prog_html += '</div>';
 						
 					}   

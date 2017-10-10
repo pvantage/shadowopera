@@ -46,35 +46,36 @@ function getAudio(){
 				if(data['src'])
 				{
 					var deviceplatform=localStorage.getItem('deviceplatform');
-					if(deviceplatform!='iOS'){
-						var videoUrl = data['src'];
+					//if(deviceplatform!='iOS'){
+						/*var videoUrl = data['src'];
 	
 						  // Just play a video
-						  window.plugins.streamingMedia.playVideo(videoUrl);
+						 // window.plugins.streamingMedia.playVideo(videoUrl);
 						
 						  // Play a video with callbacks
 						  var options = {
 							successCallback: function() {
 							  //alert("Video was closed without error.");
+							  window.location='film_audio.html';
 							},
 							errorCallback: function(errMsg) {
 							  //alert("Error! " + errMsg);
 							  window.location='film_audio.html';
 							},
 							orientation: 'landscape',
-							shouldAutoClose: true,  // true(default)/false
+							shouldAutoClose: false,  // true(default)/false
 							controls: true // true(default)/false. Used to hide controls on fullscreen
 						  };
 						  window.plugins.streamingMedia.playVideo(videoUrl, options);
 					}
 					else
-					{
+					{*/
 
 						html_wrapper += '<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 playvideobox"><div class="audio_wrapper">';	
 						
 						if(data['media_file_type'] == 'video')
 						{				
-							html_wrapper += '<video id="detplayer" width="100%" controls="false" autoplay="true">';
+							html_wrapper += '<video id="detplayer" width="100%" controls autoplay="true" playsinline="true" webkit-playsinline="true">';
 							html_wrapper += '<source src="'+ data['src'] + '" type="video/mp4">';						
 							html_wrapper += 'Your browser does not support video player';
 							html_wrapper += '</video>';
@@ -85,59 +86,115 @@ function getAudio(){
 							html_wrapper += '</audio>';
 						}
 											
-						
+					
 						html_wrapper += '</div></div>';
 						
 						if(data['script'])
 						{
 							html_wrapper += data['script'];
 						}	
-					}
+					/*}*/
 				}
 				
 					$(".player_det").html(html_wrapper);
-					
+					resizeContent();
 									
 			   }
 		   });	
 	}
 </script>
 <style>
-body{background:#535353;}
+ 
+ html{ background:#222222 !important;}
+ header {
+    float: left;
+    width: 100%;
+}
+a.backbtn {
+    float: right;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif !important;
+    background: #02a7e3;
+    padding: 2px 10px;
+    border-radius: 3px;
+	    margin-right: 0;
+
+}
+.live-lyrics {
+    padding: 0px;
+}
+header {
+     position: absolute;
+    padding: 0px;
+    background: none;
+      top: 9px;
+    right: 40px;
+	z-index: 999;
+}
+.live-lyrics .paragraph{ padding-top:0px;}
+.live-lyrics .paragraph p {
+    margin-top: 10px;
+}
+
+.playvideobox {
+    margin-bottom: 0px;
+}
+.player_det{ padding:0px;}
+.audio_wrapper{ padding:0px;}
+video#detplayer {
+    width: 100% !important;
+}
+video {
+    position: absolute;
+}
+.playvideobox{ padding:0px;}
 </style>
   </head>
-<body onLoad="getAudio();">
+<body class="livelyrics" onLoad="getAudio();">
 <div class="wrapper">
 <header>
 <div class="header-top">
-<div class="header-menu">
-<div class="menubox"><img src="images/menu-icon.png"></div>
-
-  <ul class="afterclieckshow">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./live.html">Live LYRICS</a></li>
-        <li><a href="./film_audio.html">Film Video</a></li>
-        <li><a href="./programme.html">Programme</a></li>	
-      </ul>
+<a class="backbtn" href="film_audio.html">FILM VIDEO</a>
 </div>
-Shadow Opera Group</div>
-
 </header>
-
-  <div class="container">
+  <div class="container livepagecnt">
       <div class="row">
-	  <div class="page-title"><a class="backbtn" href="./film_audio.html"><img src="images/back.png"/></a><span id="audio_title">  </span><img class="pull-right" src="images/ratio.png"/></div>
-
-	  </div>
-      
-      <div class="row playermainpage">      
-        	<div class="col-md-12 player_det"></div>       
+	  <div class="page-title">Live LYRICS</div>
+	  <div class="live-lyricscontainer">
+	  <div class="live-lyrics">
+         <div class="lyrics-main">  
+                 	<div class="lyrics-left">
+                  		<h1 id="event_title"></h1>
+                  		<h2 id="director"></h2>
+                 	</div>
+                  	<div class="lyrics-right">
+                  	<span id="date"></span>
+                    <span id="time"></span>
+                  		<label id="composer"></label>
+                  		<!--<input type="hidden" id="lyrics_id" name="lyrics_id" value="0">-->
+                   </div>
+          	  </div>
+	  	  <div class="paragraph player_det" id="lyrics"></div>
+		  <div class="samecontent" style="display:none;"></div>
+	      </div>
+	    </div>
       </div>
-      
-  </div>
+    </div>
+   </div>
+ </body>
+ 
+ 
+   <script>
+ jQuery(document).ready(function(){
+    jQuery(window).resize(function() {
+        resizeContent();
+    });
+});
 
-</div>
-
-
-  </body>
+function resizeContent() {
+   $height = jQuery (window).height();
+    jQuery('body video').height($height);
+}
+ </script>
 </html>

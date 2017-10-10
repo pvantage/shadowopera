@@ -77,9 +77,23 @@ function getProgramme(){
 		   });	
 	}
 </script>
+<style>
+.fixbg{
+position:fixed;
+top:0px;
+left:0px;
+height:100%;
+height:100%;
+background: rgba(0, 0, 0, 0) url(images/Programmebackground.jpg) no-repeat center center ;
+background-size:cover;
+width:100%;	
+}
+</style>
+
 </head>
-<body onLoad="getProgramme();">
-<div class="wrapper">
+<body onLoad="getProgramme();" style="background:none;">
+<div class="fixbg"></div>
+<div class="wrapper pro-gram-box" style="position:relative; z-index:999;">
 <header>
     <div class="header-top">
     <div class="header-menu">
@@ -99,7 +113,7 @@ function getProgramme(){
             <div class="filmaudio">
                 <div class="filmaudio-mid">
                     <div class="container">
-                        <div class="row" id="wrap_events"></div>
+                        <div class="row programme-bgbox" id="wrap_events"></div>
                     </div>
                 </div>
             </div>

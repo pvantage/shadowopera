@@ -26,8 +26,9 @@ jQuery(document).ready(function(){
 </script>
 <script type="text/javascript">
 localStorage.setItem('lyric_id', 0);
-
+localStorage.setItem('lyrics', '');
 function getEvent(){	
+	
 	var url = siteurl + '?route=common/home/getevent';		
 	jQuery.ajax({ 
 			 type: 'POST',  
@@ -37,8 +38,9 @@ function getEvent(){
 			 success: function(data){ 		
 			 		if(data['play'])
 					{						
-						if(localStorage.getItem('lyric_id') != data['lyric_id'])
+						if(localStorage.getItem('lyrics') != data['lyrics'])
 						{
+							//alert(data['lyrics']);
 								$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
@@ -55,11 +57,12 @@ function getEvent(){
 								  }
 								});
 								
-								//alert(data['lyrics']);						
+														
 								//$("#lyrics").html(data['lyrics']);
-								localStorage.setItem('lyric_id', data['lyric_id']);
-								resizeContent();
-						}else{
+								localStorage.setItem('lyrics', data['lyrics']);
+								//resizeContent();
+						}
+						/*else{
 							$("#event_title").html(data['name']);
 								$("#director").html(data['director']);
 								$("#composer").html(data['composer']);
@@ -75,7 +78,7 @@ function getEvent(){
 								}
 								localStorage.setItem('lyric_id', data['lyric_id']);
 								resizeContent();
-						}
+						}*/
 							
 						
 					}else{
@@ -130,7 +133,12 @@ video {
     height: 100% !important;
     position: absolute;
 }
-
+video::-webkit-media-controls {
+    opacity: 0;
+}
+video::-webkit-media-controls {
+    display:none !important;
+}
 
 </style>
 
