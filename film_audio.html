@@ -20,7 +20,10 @@ jQuery(document).ready(function(){
 });
 </script>
 <script type="text/javascript">
-
+var film=localStorage.getItem('film_audio');
+if(typeof film!='undefined' && film!=null && jQuery.trim(film)!=''){
+	$("#wrap_audios").html(film);
+}
 function getAudios(){
 	
 	var url = siteurl + '?route=common/home/getaudios';	
@@ -63,12 +66,24 @@ function getAudios(){
 					prog_html += '</div>';				 
 				}
 				
-				$("#wrap_audios").html(prog_html);
-					
+				$("#wrap_events").html(prog_html);
+				localStorage.setItem('film_audio',prog_html);
 							
 			   }
 		   });	
 	}
+	/*jQuery(document).ready(function(){
+		jQuery(window).scroll(function(){
+			var film=localStorage.getItem('film_audio');
+			var deviceplatform=localStorage.getItem('deviceplatform');
+			if(typeof film!='undefined' && film!=null && jQuery.trim(film)!='' && deviceplatform=='iOS'){
+				jQuery("#wrap_events").html(film);
+				if(jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() - 100) {
+					
+				}
+			}
+		});
+	});*/
 </script>
 
 <style>
@@ -86,7 +101,7 @@ width:100%;
   </head>
   <body onLoad="getAudios();" style="background:none;">
  <div class="fixbg"></div> 
-<div class="wrapper">
+<div class="wrapper pro-gram-box" style="position:relative; z-index:999;">
 <header>
 
 <div class="header-top">
@@ -96,7 +111,7 @@ width:100%;
   <ul class="afterclieckshow">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./live.html">Live LYRICS</a></li>
-    <li><a href="./film_audio.html">Film Video</a></li>
+    <li><a href="./film_audio.html">Behind the Scenes</a></li>
     <li><a href="./programme.html">Programme</a></li>	
   </ul>
 </div>
@@ -110,7 +125,7 @@ Shadow Opera Group</div>
 	  <div class="filmaudio">
 				<div class="filmaudio-mid">
 	      			<div class="container">
-        					<div class="row"  id="wrap_audios"></div>
+        					<div class="row"  id="wrap_events"></div>
 	 	 			</div>
 				</div>
 		</div>

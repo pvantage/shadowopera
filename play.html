@@ -80,10 +80,10 @@ function getAudio(){
 							html_wrapper += 'Your browser does not support video player';
 							html_wrapper += '</video>';
 						}else{
-							html_wrapper += '<audio controls="false" autoplay="true">';
+							html_wrapper += '<div class="onlyaudio"><audio controls="false" autoplay="true">';
 							html_wrapper += '<source src="'+ data['src'] + '" type="audio/mpeg">';						
 							html_wrapper += 'Your browser does not support audio player';
-							html_wrapper += '</audio>';
+							html_wrapper += '</audio></div>';
 						}
 											
 					
